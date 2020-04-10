@@ -245,6 +245,9 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
 
 - (void)applyRoundedCornersToTableViewCell:(UITableViewCell *)cell
 {
+    // Set the cell to always mask its child content
+    cell.layer.masksToBounds = YES;
+    
     // Set flags for checking both top and bottom
     BOOL topRounded = NO;
     BOOL bottomRounded = NO;
@@ -284,9 +287,6 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     }
     
     BOOL needsRounding = (topRounded || bottomRounded);
-    
-    // Configure the view to be clipped as needed
-    cell.layer.masksToBounds = needsRounding;
     
     // Set the corner radius as needed
     cell.layer.cornerRadius = needsRounding ? kTOInsetGroupedTableViewCornerRadius : 0.0f;
