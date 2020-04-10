@@ -12,7 +12,6 @@
 		223CA69B243DB72500640EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223CA69A243DB72500640EC2 /* Assets.xcassets */; };
 		223CA69E243DB72500640EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223CA69C243DB72500640EC2 /* LaunchScreen.storyboard */; };
 		223CA6AA243DB9A600640EC2 /* TOInsetGroupedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */; };
-		223CA6AC243DE02700640EC2 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223CA6AB243DE02700640EC2 /* RevealServer.framework */; };
 		22DA8E23244063BC003341C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DA8E22244063BC003341C3 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 		223CA69F243DB72500640EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		223CA6A8243DB9A600640EC2 /* TOInsetGroupedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOInsetGroupedTableView.h; sourceTree = "<group>"; };
 		223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOInsetGroupedTableView.m; sourceTree = "<group>"; };
-		223CA6AB243DE02700640EC2 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		22DA8E22244063BC003341C3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223CA6AC243DE02700640EC2 /* RevealServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +43,6 @@
 		223CA682243DB72400640EC2 = {
 			isa = PBXGroup;
 			children = (
-				223CA6AB243DE02700640EC2 /* RevealServer.framework */,
 				223CA6A7243DB77F00640EC2 /* TOInsetGroupedTableView */,
 				223CA68D243DB72400640EC2 /* TOInsetGroupedTableViewExample */,
 				223CA68C243DB72400640EC2 /* Products */,
@@ -323,11 +319,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-weak_framework",
-					RevealServer,
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOInsetGroupedTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,11 +341,6 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-weak_framework",
-					RevealServer,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOInsetGroupedTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
