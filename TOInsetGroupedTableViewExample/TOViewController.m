@@ -24,16 +24,18 @@
     [super viewDidLoad];
     self.title = @"TOInsetGroupedTableView";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Reload"
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit"
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
-                                                                             action:@selector(reload)];
+                                                                             action:@selector(editButtonTapped)];
 }
 
-- (void)reload
+- (void)editButtonTapped
 {
-    [self.tableView reloadData];
+    [self.tableView setEditing:!self.tableView.editing animated:YES];
 }
+
+#pragma mark - Table View Data Source -
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -65,9 +67,27 @@
     return cell;
 }
 
+#pragma mark - Table View Data Source -
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Enables swipe-to-delete
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    
 }
 
 @end
