@@ -1,25 +1,35 @@
 //
 //  TOInsetGroupedTableView.m
-//  TOInsetGroupedTableView
 //
-//  Created by Tim Oliver on 2020/04/08.
-//  Copyright © 2020 Tim Oliver. All rights reserved.
+//  Copyright 2020 Timothy Oliver. All rights reserved.
 //
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to
+//  deal in the Software without restriction, including without limitation the
+//  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+//  sell copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+//  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+//  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "TOInsetGroupedTableView.h"
 
-#define DEBUG_TOINSETGROUPEDTABLEVIEW 1
+// Un-comment when testing this on iOS 13 and up
+// #define DEBUG_TOINSETGROUPEDTABLEVIEW 1
 
 /**
  The KVO key we'll be using to detect when the table view
  manipulates the shape of any of the subviews
 */
 static NSString * const kTOInsetGroupedTableViewFrameKey = @"frame";
-
-/**
- By default, scroll view indicators are added to the table view
- with this initial size */
-static CGSize const kTOInsetGroupedTableViewScrollIndicatorSize = (CGSize){2.5f, 2.5f};
 
 /** The corner radius of the top and bottom cells.
  This is hard-coded with the same value as in iOS 13.
@@ -137,22 +147,6 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     if (@available(iOS 13.0, *)) { return; }
 #endif
 
-//    // Check if the view is a scroll indicator
-//    BOOL isScrollIndicator = NO;
-//    if (@available(iOS 13.0, *)) {
-//        // In iOS 13, the scroll indicator gained its own class name
-//        NSString *classString = NSStringFromClass(subview.class);
-//        isScrollIndicator = [classString rangeOfString:@"ScrollIndicator"].location != NSNotFound;
-//    }
-//    else {
-//        // In iOS 12 and below, it is a simple image view with a static size
-//        isScrollIndicator = CGSizeEqualToSize(subview.frame.size, kTOInsetGroupedTableViewScrollIndicatorSize);
-//        isScrollIndicator = isScrollIndicator && [subview isKindOfClass:[UIImageView class]];
-//    }
-    
-//    // Skip if the view is one of the scroll indicators
-//    if (isScrollIndicator) { return; }
-
     // If it's not a section header/footer view, or a table cell, ignore it
     if (![subview isKindOfClass:[UITableViewHeaderFooterView class]] &&
         ![subview isKindOfClass:[UITableViewCell class]])
@@ -256,7 +250,7 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     BOOL bottomRounded = NO;
     
     // Since the separators may not have been updated for their
-    // new position/sizing yet, force a layout before we do a check
+    // new position/sizing yet, force a layout before we do the check
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     
