@@ -216,7 +216,7 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context
 {
-    // Double check this is notification is for an observer we set
+    // Double check this notification is for an observer we set ourselves
     if ([object isKindOfClass:[UIView class]] == NO) { return; }
     if ([keyPath isEqualToString:kTOInsetGroupedTableViewFrameKey] == NO) { return; }
     
@@ -233,8 +233,8 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     UIEdgeInsets safeAreaInsets = self.safeAreaInsets;
     
     // Calculate the left margin.
-    // If the margin on its own isn't larger than the safe area inset,
-    // combine the two.
+    // If the margin on its own isn't larger than
+    // the safe area inset, combine the two.
     CGFloat leftInset = margins.left;
     if (leftInset - safeAreaInsets.left < 0.0f - FLT_EPSILON) {
         leftInset += safeAreaInsets.left;
@@ -250,7 +250,7 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     frame.origin.x = leftInset;
     frame.size.width = CGRectGetWidth(self.frame) - (leftInset + rightInset);
     
-    // Apply the new value to the underlying CALayer
+    // Apply the new frame value to the underlying CALayer
     // to avoid triggering the KVO observer into an infinite loop
     view.layer.frame = frame;
     
