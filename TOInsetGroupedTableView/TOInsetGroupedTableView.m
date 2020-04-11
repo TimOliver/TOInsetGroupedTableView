@@ -88,6 +88,23 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
+{
+#ifndef DEBUG_TOINSETGROUPEDTABLEVIEW
+    // On iOS 13 and up, override with the standard system implementation
+    if (@available(iOS 13.0, *)) {
+        return [super initWithFrame:frame style:UITableViewStyleInsetGrouped];
+    }
+#endif
+
+    // On iOS 12 and below, make sure we explicitly force the grouped style
+    if (self = [super initWithFrame:frame style:UITableViewStyleGrouped]) {
+        [self commonInit];
+    }
+
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
     if (self = [super initWithCoder:coder]) {
