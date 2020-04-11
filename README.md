@@ -47,6 +47,9 @@ In your app's Podfile, add:
 pod 'TOInsetGroupedTableView'
 ```
 
+## Usage
+
+Integrating `TOInsetGroupedTableView` is extremely simple. All that is required is to replace any instantiations of `UITableView` with `TOInsetGroupedTableView` itself.
 
 ### Swift
 
