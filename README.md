@@ -1,2 +1,3 @@
 # TOInsetGroupedTableView
-An iOS 12 back-port of the grouped inset table view style in iOS 13
+
+<img src="https://raw.githubusercontent.com/TimOliver/TOInsetGroupedTableView/master/screenshot.jpg" width ="850" />
