@@ -27,10 +27,6 @@ This library is fantastic for developers adopting the new rounded corners style 
 * Xcode 11.0 or higher.
 * iOS 12.0 or higher (iOS 11 should work, but it still needs testing.)
 
-## Usage
-
-Integrating `TOInsetGroupedTableView` is extremely simple as it introduces no new APIs or changes any external inputs. All that is needed is to replace `UITableView()` instantiations with `TOInsetGroupedTableView()`.
-
 ## Installation
 
 ### Manual Installation
@@ -49,7 +45,7 @@ pod 'TOInsetGroupedTableView'
 
 ## Usage
 
-Integrating `TOInsetGroupedTableView` is extremely simple. All that is required is to replace any instantiations of `UITableView` with `TOInsetGroupedTableView` itself.
+Integrating `TOInsetGroupedTableView` is extremely simple as it introduces no new APIs or changes any external inputs. All that is needed is to replace `UITableView()` instantiations with `TOInsetGroupedTableView()`.
 
 ### Swift
 
