@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'TOInsetGroupedTableView'
-  s.version  = '1.0.0'
+  s.version  = '1.0.1'
   s.license  =  { :type => 'MIT', :file => 'LICENSE' }
   s.summary  = 'An iOS 12 back-port of the grouped inset table view style in iOS 13.'
   s.homepage = 'https://github.com/TimOliver/TOInsetGroupedTableView'
