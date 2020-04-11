@@ -49,9 +49,7 @@ Integrating `TOInsetGroupedTableView` is extremely simple as it introduces no ne
 
 ### Swift
 
-In Swift, the class is renamed to `InsetGroupedTableView`.
-
-In order to integrate it, simply replace any instances of
+In Swift, the class is renamed to `InsetGroupedTableView`. In order to integrate it, simply replace any instances of
 
 ```swift
 self.tableView = UITableView(frame: .zero, style: .insetGrouped)
