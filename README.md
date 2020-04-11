@@ -18,7 +18,7 @@ On iOS 13 and above, it defers back to using the system implementation, meaning 
 This library is fantastic for developers adopting the new rounded corners style of table views in their apps, but are still supporting iOS 12.
 
 ## Features
-* Brings the modern looking rounded corners look to previous versions of iOS.
+* Brings the modern rounded corners look to table views in previous versions of iOS.
 * All override behaviour is contained in the table view. No modifications of the cell views themselves is required.
 * Defers back to the system implementation on iOS 13 and higher.
 * As the code is only ever executed below iOS 13, there is no chance of future iOS releases breaking the build.
