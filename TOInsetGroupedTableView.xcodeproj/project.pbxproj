@@ -13,7 +13,19 @@
 		223CA69E243DB72500640EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223CA69C243DB72500640EC2 /* LaunchScreen.storyboard */; };
 		223CA6AA243DB9A600640EC2 /* TOInsetGroupedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */; };
 		22DA8E23244063BC003341C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DA8E22244063BC003341C3 /* main.m */; };
+		22DA8E3124417361003341C3 /* TOInsetGroupedTableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DA8E3024417361003341C3 /* TOInsetGroupedTableViewTests.m */; };
+		22DA8E382441737B003341C3 /* TOInsetGroupedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22DA8E3324417361003341C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 223CA683243DB72400640EC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 223CA68A243DB72400640EC2;
+			remoteInfo = TOInsetGroupedTableView;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		223CA68B243DB72400640EC2 /* TOInsetGroupedTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOInsetGroupedTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,10 +39,20 @@
 		223CA6A8243DB9A600640EC2 /* TOInsetGroupedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOInsetGroupedTableView.h; sourceTree = "<group>"; };
 		223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOInsetGroupedTableView.m; sourceTree = "<group>"; };
 		22DA8E22244063BC003341C3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22DA8E2E24417361003341C3 /* TOInsetGroupedTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOInsetGroupedTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22DA8E3024417361003341C3 /* TOInsetGroupedTableViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOInsetGroupedTableViewTests.m; sourceTree = "<group>"; };
+		22DA8E3224417361003341C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		223CA688243DB72400640EC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DA8E2B24417361003341C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +67,7 @@
 			children = (
 				223CA6A7243DB77F00640EC2 /* TOInsetGroupedTableView */,
 				223CA68D243DB72400640EC2 /* TOInsetGroupedTableViewExample */,
+				22DA8E2F24417361003341C3 /* TOInsetGroupedTableViewTests */,
 				223CA68C243DB72400640EC2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				223CA68B243DB72400640EC2 /* TOInsetGroupedTableView.app */,
+				22DA8E2E24417361003341C3 /* TOInsetGroupedTableViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +105,15 @@
 			path = TOInsetGroupedTableView;
 			sourceTree = "<group>";
 		};
+		22DA8E2F24417361003341C3 /* TOInsetGroupedTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DA8E3024417361003341C3 /* TOInsetGroupedTableViewTests.m */,
+				22DA8E3224417361003341C3 /* Info.plist */,
+			);
+			path = TOInsetGroupedTableViewTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +135,24 @@
 			productReference = 223CA68B243DB72400640EC2 /* TOInsetGroupedTableView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		22DA8E2D24417361003341C3 /* TOInsetGroupedTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22DA8E3524417361003341C3 /* Build configuration list for PBXNativeTarget "TOInsetGroupedTableViewTests" */;
+			buildPhases = (
+				22DA8E2A24417361003341C3 /* Sources */,
+				22DA8E2B24417361003341C3 /* Frameworks */,
+				22DA8E2C24417361003341C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22DA8E3424417361003341C3 /* PBXTargetDependency */,
+			);
+			name = TOInsetGroupedTableViewTests;
+			productName = TOInsetGroupedTableViewTests;
+			productReference = 22DA8E2E24417361003341C3 /* TOInsetGroupedTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -113,6 +164,10 @@
 				TargetAttributes = {
 					223CA68A243DB72400640EC2 = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					22DA8E2D24417361003341C3 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 223CA68A243DB72400640EC2;
 					};
 				};
 			};
@@ -130,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				223CA68A243DB72400640EC2 /* TOInsetGroupedTableView */,
+				22DA8E2D24417361003341C3 /* TOInsetGroupedTableViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -141,6 +197,13 @@
 			files = (
 				223CA69E243DB72500640EC2 /* LaunchScreen.storyboard in Resources */,
 				223CA69B243DB72500640EC2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22DA8E2C24417361003341C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +241,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22DA8E2A24417361003341C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22DA8E3124417361003341C3 /* TOInsetGroupedTableViewTests.m in Sources */,
+				22DA8E382441737B003341C3 /* TOInsetGroupedTableView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22DA8E3424417361003341C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 223CA68A243DB72400640EC2 /* TOInsetGroupedTableView */;
+			targetProxy = 22DA8E3324417361003341C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		223CA69C243DB72500640EC2 /* LaunchScreen.storyboard */ = {
@@ -348,6 +428,48 @@
 			};
 			name = Release;
 		};
+		22DA8E3624417361003341C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				INFOPLIST_FILE = TOInsetGroupedTableViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOInsetGroupedTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOInsetGroupedTableView.app/TOInsetGroupedTableView";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		22DA8E3724417361003341C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				INFOPLIST_FILE = TOInsetGroupedTableViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOInsetGroupedTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOInsetGroupedTableView.app/TOInsetGroupedTableView";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -365,6 +487,15 @@
 			buildConfigurations = (
 				223CA6A5243DB72500640EC2 /* Debug */,
 				223CA6A6243DB72500640EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22DA8E3524417361003341C3 /* Build configuration list for PBXNativeTarget "TOInsetGroupedTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22DA8E3624417361003341C3 /* Debug */,
+				22DA8E3724417361003341C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
