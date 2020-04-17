@@ -303,7 +303,7 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     
     // Since the cell might still be not laid out yet
     // (And the separators aren't in the right places)
-    // force a re-layout beforehand
+    // force a re-layout beforehand.
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     
