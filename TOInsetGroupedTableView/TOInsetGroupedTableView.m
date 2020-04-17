@@ -31,6 +31,12 @@
 */
 static NSString * const kTOInsetGroupedTableViewFrameKey = @"frame";
 
+/**
+ The KVO key we'll be using to detect when the table view
+ has been set to selected or not (which is the best time to calculate rounded corners)
+*/
+static NSString * const kTOInsetGroupedTableViewSelectedKey = @"selected";
+
 /** The corner radius of the top and bottom cells.
  This is hard-coded with the same value as in iOS 13.
  */
@@ -189,8 +195,22 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
         return;
     }
     
-    // Register the view and add it to our set
-    [view addObserver:self forKeyPath:@"frame" options:0 context:nil];
+    // Register the view to observe its frame shape
+    [view addObserver:self
+           forKeyPath:kTOInsetGroupedTableViewFrameKey
+              options:0
+              context:nil];
+    
+    // If it's a cell, register for when it's set as selected
+    // so we can round the corners then
+    if ([view isKindOfClass:[UITableViewCell class]]) {
+        [view addObserver:self
+               forKeyPath:kTOInsetGroupedTableViewSelectedKey
+                  options:0
+                  context:nil];
+    }
+    
+    // Add it to the set
     [self.observedViews addObject:view];
 }
 
@@ -202,9 +222,17 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     
     // Loop through each object in the set, and de-register them
     for (UIView *view in self.observedViews) {
+        // Remove the frame observer
         [view removeObserver:self
                   forKeyPath:kTOInsetGroupedTableViewFrameKey
                      context:nil];
+        
+        // If table cell, remove the selected observer
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            [view removeObserver:self
+                      forKeyPath:kTOInsetGroupedTableViewSelectedKey
+                         context:nil];
+        }
     }
     
     // Clean out all of the views from the set
@@ -216,12 +244,18 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context
 {
-    // Double check this notification is for an observer we set ourselves
+    // Double check this notification is about an object we care about
     if ([object isKindOfClass:[UIView class]] == NO) { return; }
-    if ([keyPath isEqualToString:kTOInsetGroupedTableViewFrameKey] == NO) { return; }
-    
-    // Perform the inset layout on this view
-    [self performInsetLayoutForView:object];
+    UIView *view = (UIView *)object;
+
+    // If the key was a frame observation, perform the inset
+    if ([keyPath isEqualToString:kTOInsetGroupedTableViewFrameKey]) {
+        [self performInsetLayoutForView:view];
+    }
+    else if ([keyPath isEqualToString:kTOInsetGroupedTableViewSelectedKey]) {
+        // If the key was the selection key, apply rounding
+        [self applyRoundedCornersToTableViewCell:(UITableViewCell *)view];
+    }
 }
 
 #pragma mark - Behaviour Overrides -
@@ -253,11 +287,6 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     // Apply the new frame value to the underlying CALayer
     // to avoid triggering the KVO observer into an infinite loop
     view.layer.frame = frame;
-    
-    // If the view is a table view cell, apply the rounded corners as needed
-    if ([view isKindOfClass:[UITableViewCell class]]) {
-        [self applyRoundedCornersToTableViewCell:(UITableViewCell *)view];
-    }
 }
 
 - (void)applyRoundedCornersToTableViewCell:(UITableViewCell *)cell
@@ -268,14 +297,15 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
     // Set flags for checking both top and bottom
     BOOL topRounded = NO;
     BOOL bottomRounded = NO;
-    
-    // Since the separators may not have been updated for their
-    // new position/sizing yet, force a layout before we do the check
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
-    
+
     // The maximum height a separator might be
     CGFloat separatorHeight = 1.0f;
+    
+    // Since the cell might still be not laid out yet
+    // (And the separators aren't in the right places)
+    // force a re-layout beforehand
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
     
     // Loop through each subview
     for (UIView *subview in cell.subviews) {
