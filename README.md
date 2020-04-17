@@ -15,7 +15,7 @@
 
 On iOS 13 and above, it defers back to using the system implementation, meaning absolutely no extra configuration code is required.
 
-This library is fantastic for developers adopting the new rounded corners style of table views in their apps, but are still supporting iOS 12.
+This library is fantastic for developers adopting the new rounded corners style of table views in their apps, but are still supporting iOS 11 or iOS 12.
 
 ## Features
 * Brings the modern rounded corners look to table views in previous versions of iOS.
@@ -25,7 +25,7 @@ This library is fantastic for developers adopting the new rounded corners style 
 
 ## Requirements
 * Xcode 11.0 or higher.
-* iOS 12.0 or higher (iOS 11 should work, but it still needs testing.)
+* iOS 11.0 or higher.
 
 ## Installation
 
