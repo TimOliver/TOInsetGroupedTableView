@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1712175D2636EB4B0028CD9F /* TOInsetGroupedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TOInsetGroupedTableView.h; path = include/TOInsetGroupedTableView.h; sourceTree = "<group>"; };
 		223CA68B243DB72400640EC2 /* TOInsetGroupedTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOInsetGroupedTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223CA68E243DB72400640EC2 /* TOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOAppDelegate.h; sourceTree = "<group>"; };
 		223CA68F243DB72400640EC2 /* TOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOAppDelegate.m; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		223CA69A243DB72500640EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		223CA69D243DB72500640EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		223CA69F243DB72500640EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		223CA6A8243DB9A600640EC2 /* TOInsetGroupedTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOInsetGroupedTableView.h; sourceTree = "<group>"; };
 		223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOInsetGroupedTableView.m; sourceTree = "<group>"; };
 		22DA8E22244063BC003341C3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22DA8E2E24417361003341C3 /* TOInsetGroupedTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOInsetGroupedTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +99,7 @@
 		223CA6A7243DB77F00640EC2 /* TOInsetGroupedTableView */ = {
 			isa = PBXGroup;
 			children = (
-				223CA6A8243DB9A600640EC2 /* TOInsetGroupedTableView.h */,
+				1712175D2636EB4B0028CD9F /* TOInsetGroupedTableView.h */,
 				223CA6A9243DB9A600640EC2 /* TOInsetGroupedTableView.m */,
 			);
 			path = TOInsetGroupedTableView;
