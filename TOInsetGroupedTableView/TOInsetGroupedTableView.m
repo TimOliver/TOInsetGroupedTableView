@@ -50,6 +50,8 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
  */
 @property (nonatomic, strong) NSMutableSet *observedViews;
 
+@property (nonatomic, assign) int realSeparatorStyle;
+
 @end
 
 @implementation TOInsetGroupedTableView
@@ -179,6 +181,26 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
 
     // Register this view for observation
     [self addObserverIfNeeded:subview];
+}
+
+- (void)setSeparatorStyle:(UITableViewCellSeparatorStyle)separatorStyle
+{
+    if (separatorStyle == UITableViewCellSeparatorStyleNone) {
+        // make sure there will be _UITableViewCellSeparatorView in cell's subViews
+        self.separatorColor = UIColor.clearColor;
+        self.realSeparatorStyle = UITableViewCellSeparatorStyleNone;
+        return;
+    }
+    self.realSeparatorStyle = -1;
+    [super setSeparatorStyle:separatorStyle];
+}
+
+- (UITableViewCellSeparatorStyle)separatorStyle
+{
+    if (self.realSeparatorStyle > -1) {
+        return self.realSeparatorStyle;
+    }
+    return [super separatorStyle];
 }
 
 #pragma mark - Observer Life-cycle -
