@@ -153,15 +153,6 @@ static CGFloat const kTOInsetGroupedTableViewCornerRadius = 10.0f;
 
 #pragma mark - Table View Behaviour Overrides -
 
-- (void)reloadData
-{
-    // Since all views will be removed and re-added,
-    // potentially in different orders,
-    // stop observing all views at this time.
-    [self removeAllObservers];
-    [super reloadData];
-}
-
 - (void)didAddSubview:(UIView *)subview
 {
     [super didAddSubview:subview];
